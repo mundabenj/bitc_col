@@ -21,66 +21,59 @@
     </div>
 
     <div class="row">
-        <div class="left_side_bar">
-            <h3>Left Side Bar</h3>
-        </div>
         <div class="content">
     <h1>Contact Us</h1>
-    <p>This is the contact page of our website.</p>
-
+ 
     <form action="">
 
-        <input type="text" name="" placeholder="Enter your name" required><br>
-        <input type="email" name="" placeholder="Enter your email" required><br>
-        <input type="number" name="" placeholder="Enter your phone number" required><br>
-        <input type="password" name="" placeholder="Enter your password" required><br>
-        <input type="date" name="" placeholder="Enter your date of birth" required><br>
-        <input type="time" name="" placeholder="Enter your time of birth" required><br>
-        <input type="color" name="" placeholder="Enter your favourite color" required><br>
-        <input type="range" name="" placeholder="Enter your age" required><br>
-        <input type="url" name="" placeholder="Enter your website" required><br>
-        <input type="search" name="" placeholder="Search for something" required><br>
-        <input type="file" name="" placeholder="Upload a file" required><br>
+        <label for="fullname">Name:</label><br>
+        <input type="text" id="fullname" name="fullname" maxlength="60" required><br><br>
 
-        <input type="radio" name="rating" value="1"> 1 <br>
-        <input type="radio" name="rating" value="2"> 2 <br>
-        <input type="radio" name="rating" value="3"> 3 <br>
-        <input type="radio" name="rating" value="4"> 4 <br>
-        <input type="radio" name="rating" value="5"> 5 <br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" maxlength="60" required><br><br>
 
-        <input type="checkbox" name="subscribe" value="yes"> Subscribe to BBIT newsletter<br>
-        <input type="checkbox" name="subscribe" value="yes"> Subscribe to BICS newsletter<br>
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone" maxlength="13" ><br><br>
 
-        <select name="" id="">
-            <option value="">Select your country</option>
-            <option value="kenya">Kenya</option>
-            <option value="uganda">Uganda</option>
-            <option value="tanzania">Tanzania</option>
-            <option value="rwanda">Rwanda</option>
-        </select>
-        <br>
+        <label for="subject">Subject:</label><br>
+        <select id="subject" name="subject" required>
+            <option value="general">General Inquiry</option>
+            <option value="eLearning support">eLearning Support</option>
+            <option value="AMS support">AMS Support</option>
+            <option value="feedback">Feedback</option>
+            <option value="other">Other</option>
+        </select><br><br>   
 
-        <textarea name="" id="" cols="30" rows="5" placeholder="Enter your message"></textarea>
 
-        <br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" maxlength="500" required></textarea><br><br>
 
-        <input type="submit" value="Upload Details"><br>
-        <button type="submit">Submit Details</button>
+        <input type="submit" value="Send Message">
     </form>
 
-
-
-    <dl>
-        <dt>Email</dt>
-        <dd><a href="mailto:bbit@example.com">bbit@example.com</a></dd>
-        <dt>Phone</dt>
-        <dd><a href="tel:+1234567890">+1234567890</a></dd>
-        <dt>Address</dt>
-        <dd>123 Mada, Nairobi</dd>
-    </dl>
         </div>
         <div class="right_side_bar">
-            <h3>Right Side Bar</h3>
+            <h2>Our branch offices</h2>
+                <h3>Our Nairobi Office</h3>
+                    <p>Email: <a href="mailto:bbit@example.com">bbit@example.com</a></p>
+                    <p>Phone: <a href="tel:+1234567890">+1234567890</a></p>
+                    <p>Address: 123 Nairobi, Kenya</p>
+                <h3>Our Mombasa Office</h3>
+                    <p>Email: <a href="mailto:bbit@example.com">bbit@example.com</a></p>
+                    <p>Phone: <a href="tel:+1234567890">+1234567890</a></p>
+                    <p>Address: 123 Mombasa, Kenya</p>
+                <h3>Our Kisumu Office</h3>
+                    <p>Email: <a href="mailto:bbit@example.com">bbit@example.com</a></p>
+                    <p>Phone: <a href="tel:+1234567890">+1234567890</a></p>
+                    <p>Address: 123 Kisumu, Kenya</p>
+                <h3>Our Eldoret Office</h3>
+                    <p>Email: <a href="mailto:bbit@example.com">bbit@example.com</a></p>
+                    <p>Phone: <a href="tel:+1234567890">+1234567890</a></p>
+                    <p>Address: 123 Eldoret, Kenya</p>
+                <h3>Our Malindi Office</h3>
+                    <p>Email: <a href="mailto:bbit@example.com">bbit@example.com</a></p>
+                    <p>Phone: <a href="tel:+1234567890">+1234567890</a></p>
+                    <p>Address: 123 Malindi, Kenya</p>
         </div>
     </div>
 
