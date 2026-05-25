@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<body onload="starTime()">
+    <script>
+        var name = "Alex Okama";
+        document.write(greetings(name));
+    </script>
+<p id="dateTime"></p>
+
+<script>
+    // Indexed array
+   var fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+    // document.write("<br>" + fruits[1] + "<br>"); // Output: Banana
+
+    // Associative array (using an object in JavaScript)
+    var person = {
+        name: "John Doe",
+        age: 30,
+        city: "New York"
+    };
+    document.write(person.city);
+
+    // multi-dimensional array (array of arrays)
+    var matrix = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ];
+    document.write("<br>" + matrix[2][2] + "<br>"); // Output: 9
+
+    var userDetails = {
+        Director:{
+            name: ["Alex", "Otema"],
+            email: {
+                "Work Email": "alex.otema@example.com",
+                "Home Email": "alex.otema@home.com"
+            },
+            phone: "123-456-7890",
+            address: "123 Main St, Anytown, USA"
+      },
+        Manager: {
+                name: ["Jane", "Okama"],
+                email: {
+                    Work_Email: "jane.okama@example.com",
+                    "Home Email": "jane.okama@home.com"
+                },
+                phone: "987-654-3210",
+                address: "456 Elm St, Othertown, USA"
+        },
+        "Human Resources": {
+            name: ["Alice", "Okama"],
+            email: {
+                Work_Email: "alice.okama@example.com",
+                "Home Email": "alice.okama@home.com"
+            },
+            phone: "555-123-4567",
+            address: "789 Oak St, Sometown, USA"
+        },
+        Operations: {
+            name: ["Bob", "Okama"],
+            email: {
+                "Work Email": "bob.okama@example.com",
+                "Home Email": "bob.okama@home.com"
+            },
+            phone: "444-555-6666",
+            address: "101 Pine St, Anothertown, USA"
+        },
+        Secretary: {
+            name: ["Charlie", "Okama"],
+            email: {
+                "Work Email": "charlie.okama@example.com",
+                "Home Email": "charlie.okama@home.com"
+            },
+            phone: "333-444-5555",
+            address: "202 Maple St, Newtown, USA"
+        },
+        // functions
+        getDirectorEmail: function() {
+            return userDetails.Director.email["Work Email"];
+        },
+        getManagerHomeEmail: function () {
+        // Secretary home email
+         return this.Secretary.email["Home Email"] + "<br>"; 
+        }
+    };
+    // Accessing data
+    document.write(userDetails.getManagerHomeEmail() + "<br>"); // Output:
+
+var kenyanCities = ["Nairobi", "Mombasa", "Kisumu", "Nakuru", "Eldoret", "Thika", "Kitale", "Garissa", "Meru", "Machakos"];
+</script>
+
+<form action="" class="contactForm1">
+    <label for="cities">Select a city:</label><br>
+    <select id="cities" name="cities">
+        <script>
+            for (var i = 0; i < kenyanCities.length; i++) {
+                document.write("<option value='" + kenyanCities[i] + "'>" + kenyanCities[i] + "</option>");
+            }
+        </script>
+    </select>
+</form>
+<br>
+<select name="" id="">
+    <option value="">Select a city</option>
+    <option value="Nairobi">Nairobi</option>
+    <option value="Mombasa">Mombasa</option>
+    <option value="Kisumu">Kisumu</option>
+    <option value="Nakuru">Nakuru</option>
+    <option value="Eldoret">Eldoret</option>
+</select>
+
+
+<br>
+
+<script>
+    var dateTime = new Date(); // current date and time
+    var hours = dateTime.getHours();
+
+    var weekday = dateTime.getDay(); // output: 0 (Sunday) to 6 (Saturday)
+    // array of weekday indexes
+    // { 0:"Sunday", 1:"Monday", 2:"Tuesday", 3:"Wednesday", 4:"Thursday", 5:"Friday", 6:"Saturday"}
+    var weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    var weekdayName = weekdays[weekday]; // get the weekday name
+
+    var month = dateTime.getMonth(); // output: 0 (January) to 11 (December)
+    // array of month indexes
+    // { 0:"January", 1:"February", 2:"March", 3:"April", 4:"May", 5:"June", 6:"July", 7:"August", 8:"September", 9:"October", 10:"November", 11:"December"}
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var monthName = months[month]; // get the month name
+
+
+    document.write("Hours: " + hours);
+    document.write("<br>Weekday: " + weekdayName);
+    document.write("<br>Month: " + monthName);
+
+</script>
+<br>
+<br>
+<br>
+<br>
+
+</body>
+</html>
