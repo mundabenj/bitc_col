@@ -190,6 +190,63 @@ for (var carDetail in car) { // iterating over the car object
 </script>
 <br>
 <br>
+
+<h5>Select Date of Birth</h5>
+<select>
+    <script>
+var DateTime = new Date(); // current date and time
+var currentMonth = DateTime.getMonth() + 1; // get the current month (0-11, so we add 1 to get 1-12)
+var months_with_30_days = [4, 6, 9, 11]; // April, June, September, November
+var months_with_31_days = [1, 3, 5, 7, 8, 10, 12]; // January, March, May, July, August, October, December
+var february_month = 2; // February
+if (months_with_30_days.includes(currentMonth)) {
+    var daysInMonth = 30;
+} else if (months_with_31_days.includes(currentMonth)) {
+    var daysInMonth = 31;
+} else if (currentMonth === february_month) {
+    var year = DateTime.getFullYear(); // get the current year
+    // Check for leap year
+    if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+        var daysInMonth = 29; // Leap year
+    } else {
+        var daysInMonth = 28; // Non-leap year
+    }
+    // return daysInMonth;
+}
+    document.write("<option value=''>" + DateTime.getDate() + " </option>");
+    for (var day = 1; day <= daysInMonth; day++) {
+        if(day === DateTime.getDate()) {
+            continue; // Skip the current day
+        }
+        document.write("<option value='" + day + "'>" + day + "</option>");
+    }
+    </script>
+</select>
+<select>
+    <script>
+            document.write("<option value=''>" + months[DateTime.getMonth()] + " </option>");
+        for (var month = 0; month < months.length; month++) {
+            if(month === DateTime.getMonth()) {
+                continue; // Skip the current month
+            }
+            document.write("<option value='" + months[month] + "'>" + months[month] + "</option>");
+        }
+    </script>
+</select>
+<select>
+    <script>
+        var currentYear = new Date().getFullYear();
+        var minYear = currentYear - 10; // Assuming a maximum age of 100 years
+            document.write("<option value=''>" + currentYear + " </option>");
+        for (var year = currentYear; year >= minYear; year--) {
+            if(year === currentYear) {
+                continue; // Skip the current year
+            }
+            document.write("<option value='" + year + "'>" + year + "</option>");
+        }
+    </script>
+</select>
+
 <br>
 <br>
 
