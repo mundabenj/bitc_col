@@ -10,6 +10,7 @@
 <body onload="starTime()">
     <script>
         var name = "Alex Okama";
+        // calling the function from the external JavaScript file
         document.write(greetings(name));
     </script>
 <p id="dateTime"></p>
@@ -81,6 +82,11 @@
             phone: "333-444-5555",
             address: "202 Maple St, Newtown, USA"
         },
+        // Secretary Bio
+        SecretaryBio: function() {
+            return this.Secretary.name.join(" ") + " is the secretary of the company. You can contact him at " + this.Secretary.email["Work Email"] + " or " + this.Secretary.email["Home Email"] + ". Or schedule a meeting at " + this.Secretary.phone + " or visit him at " + this.Secretary.address + ".";
+        },
+
         // functions
         getDirectorEmail: function() {
             return userDetails.Director.email["Work Email"];
@@ -92,6 +98,7 @@
     };
     // Accessing data
     document.write(userDetails.getManagerHomeEmail() + "<br>"); // Output:
+    document.write(userDetails.SecretaryBio() + "<br>");
 
 var kenyanCities = ["Nairobi", "Mombasa", "Kisumu", "Nakuru", "Eldoret", "Thika", "Kitale", "Garissa", "Meru", "Machakos"];
 </script>
@@ -116,7 +123,6 @@ var kenyanCities = ["Nairobi", "Mombasa", "Kisumu", "Nakuru", "Eldoret", "Thika"
     <option value="Eldoret">Eldoret</option>
 </select>
 
-
 <br>
 
 <script>
@@ -135,10 +141,51 @@ var kenyanCities = ["Nairobi", "Mombasa", "Kisumu", "Nakuru", "Eldoret", "Thika"
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     var monthName = months[month]; // get the month name
 
-
     document.write("Hours: " + hours);
     document.write("<br>Weekday: " + weekdayName);
     document.write("<br>Month: " + monthName);
+// loops
+// While loop
+document.write("<h4>While Loop</h4>");
+var i = 7; // initialization
+while (i <= 15) { // Condition
+    document.write(i + "<br>"); // code to be executed
+    i+=2; // increment by 2
+}
+// do-while loop
+document.write("<h4>Do-While Loop</h4>");
+var j = 10; // initialization
+do {
+    document.write(j + "<br>"); // code to be executed
+    j+=3; // increment by 3
+} while (j <= 30); // Condition
+// for loop
+document.write("<h4>For Loop</h4>");
+for (var k = 1; k <= 10; k++) { // initialization, condition, increment
+    document.write(k + "<br>"); // code to be executed
+}
+// for of loop (for arrays)
+document.write("<h4>For Of Loop</h4>");
+var colors = ["Red", "Green", "Blue", "Yellow", "Purple"];
+for (var color of colors) { // iterating over the colors array
+    if (color === "Yellow") {
+        break; // exit the loop when color is Yellow
+        // continue; // skip the rest of the loop when color is Yellow
+    }
+    document.write(color + "<br>"); // code to be executed
+}
+// for in loop (for objects)
+document.write("<h4>For In Loop</h4>");
+var car = {
+    make: "Toyota",
+    model: "Corolla",
+    year: 2020,
+    color: "Red"
+};
+for (var carDetail in car) { // iterating over the car object
+    document.write(carDetail + ": " + car[carDetail] + "<br>"); // code to be executed
+}
+
 
 </script>
 <br>
