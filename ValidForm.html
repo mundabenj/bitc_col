@@ -112,14 +112,12 @@
 
         // Validate Phone Number
         const phone = document.getElementById('phone').value.trim();
+        const phonePattern = /^\+?\d{3,13}$/; // Regular expression for validating phone number (digits and optional plus sign at the beginning, with a length of 3 to 13 digits)
         if (phone === '') { // Check if the phone number field is empty
             document.getElementById('phoneError').textContent = 'Phone Number is required';
             isValid = false;
-        }else if (!/^[0-9+]+$/.test(phone)) { // Check if the phone number contains only digits and plus sign
-            document.getElementById('phoneError').textContent = 'Phone Number must contain only digits and plus sign';
-            isValid = false;
-        }else if (phone.length > 13) { // Check if the phone number is too long
-            document.getElementById('phoneError').textContent = 'Phone Number must be at most 13 digits';
+        }else if (!phonePattern.test(phone)) { // Check if the phone number contains only digits and plus sign
+            document.getElementById('phoneError').textContent = 'Invalid phone number format.';
             isValid = false;
         }
 
