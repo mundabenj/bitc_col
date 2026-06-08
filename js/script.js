@@ -56,3 +56,90 @@ function daysInMonths(DateTime) { // function to calculate the number of days in
     }
     return daysInMonth;
 }
+
+function FormValidation(registrationForm) {
+     // JavaScript for form validation
+    // Create an event listener for form submission
+    document.getElementById(registrationForm).addEventListener('submit', function(event){
+        event.preventDefault(); // Prevent form from submitting
+
+        // Clear previous error messages
+        document.getElementById('nameError').textContent = '';
+        document.getElementById('emailError').textContent = '';
+        document.getElementById('phoneError').textContent = '';
+        document.getElementById('passwordError').textContent = '';
+        document.getElementById('confirmPasswordError').textContent = '';
+
+        // Flag to track form validity
+        let isValid = true;
+
+         // Sample user details object
+        // Validate Full Name
+        const fullname = document.getElementById('fullname').value.trim();
+        if (fullname === '') { // Check if the full name field is empty
+            document.getElementById('nameError').textContent = 'Full Name is required';
+            isValid = false;
+        }else if (fullname.length < 3) { // Check if the full name is too short
+            document.getElementById('nameError').textContent = 'Full Name must be at least 3 characters long';
+            isValid = false;
+        }else if (!/^[a-zA-Z\s']+$/.test(fullname)) { // Check if the full name contains only letters, spaces, and apostrophes
+            document.getElementById('nameError').textContent = 'Full Name can only contain letters, spaces, and apostrophes';
+            isValid = false;
+        }
+
+        // Validate Email
+        const email = document.getElementById('email').value.trim(); // Check if the email field is empty
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regular expression for validating email format
+        const validEmailDomains = ['gmail.com', 'yahoo.com', 'strathmore.edu', 'o365.strathmore.edu']; // List of valid email domains
+        const emailDomain = email.split('@')[1]; // Extract the domain from the email address
+        if (email === '') {
+            document.getElementById('emailError').textContent = 'Email is required';
+            isValid = false;
+        } else if (!emailPattern.test(email)) { // Check if the email format is valid
+            document.getElementById('emailError').textContent = 'Invalid email format';
+            isValid = false;
+        } else if (!validEmailDomains.includes(emailDomain)) { // Check if the email domain is valid
+            document.getElementById('emailError').textContent = 'Email domain must be one of the following: ' + validEmailDomains.join(', ');
+            isValid = false;
+        }
+
+        // Validate Phone Number
+        const phone = document.getElementById('phone').value.trim();
+        const phonePattern = /^\+?\d{3,13}$/; // Regular expression for validating phone number (digits and optional plus sign at the beginning, with a length of 3 to 13 digits)
+        if (phone === '') { // Check if the phone number field is empty
+            document.getElementById('phoneError').textContent = 'Phone Number is required';
+            isValid = false;
+        }else if (!phonePattern.test(phone)) { // Check if the phone number contains only digits, optional plus sign at the beginning and has a valid length
+            document.getElementById('phoneError').textContent = 'Invalid phone number format.';
+            isValid = false;
+        }
+
+        // Validate Password
+        const password = document.getElementById('password').value.trim();
+        if (password === '') { // Check if the password field is empty
+            document.getElementById('passwordError').textContent = 'Password is required';
+            isValid = false;
+        }else if (password.length < 6) { // Check if the password is too short
+            document.getElementById('passwordError').textContent = 'Password must be at least 6 characters long';
+            isValid = false;
+        }
+
+        // Validate Confirm Password
+        const confirmPassword = document.getElementById('confirm_password').value.trim();
+        if (confirmPassword === '') { // Check if the confirm password field is empty
+            document.getElementById('confirmPasswordError').textContent = 'Confirm Password is required';
+            isValid = false;
+        } else if (password !== confirmPassword) { // Check if the passwords match
+            document.getElementById('confirmPasswordError').textContent = 'Passwords do not match';
+            isValid = false;
+        }
+
+        if (isValid) {
+            // Form is valid, you can submit it or perform further actions
+            document.getElementById('validation_result').textContent = 'Form is valid! Submitting...';
+            document.getElementById('validation_result').className = 'success';
+        }else {
+            document.getElementById('validation_result').textContent = '';
+        }
+    });
+}
