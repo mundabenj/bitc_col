@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .registration-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+            margin: 0;
+        }
+        .field {
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+<!-- Registration Form -->
+<form action="#" method="post" id="registrationForm" class="registration-form">
+    <h2>Registration Form</h2>
+    <div class="field">
+        <label for="fullname">Full Name:</label><br>
+        <input type="text" id="fullname" name="fullname" maxlength="60" required><br>
+        <p id="nameError" class="error"></p>
+    </div>
+    <div class="field">
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" maxlength="60" required><br>
+        <p id="emailError" class="error"></p>
+    </div>
+    <div class="field">
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone" maxlength="13"><br>
+        <p id="phoneError" class="error"></p>
+    </div>
+    <div class="field">
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br>
+        <p id="passwordError" class="error"></p>
+    </div>
+    <div class="field">
+        <label for="confirm_password">Confirm Password:</label><br>
+        <input type="password" id="confirm_password" name="confirm_password" required><br>
+        <p id="confirmPasswordError" class="error"></p>
+    </div>
+    <input type="submit" value="Register">
+</form>
+
+</body>
+</html>
