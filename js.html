@@ -191,7 +191,7 @@ for (var carDetail in car) { // iterating over the car object
 <br>
 <br>
 
-<h5>Select Date of Birth</h5>
+<h5>Select the Registration Date</h5>
 
 <select>
     <script>
@@ -218,7 +218,7 @@ for (var carDetail in car) { // iterating over the car object
 <select>
     <script>
         var currentYear = new Date().getFullYear();
-        var minYear = currentYear - 10; // Assuming a maximum age of 100 years
+        var minYear = currentYear - 10; // Assuming a maximum age of 10 years
             document.write("<option value=''>" + currentYear + " </option>");
         for (var year = currentYear; year >= minYear; year--) {
             if(year === currentYear) {

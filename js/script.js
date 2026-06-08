@@ -36,7 +36,6 @@ function addZero(i) {
     return i;
 }
 
-
 function daysInMonths(DateTime) { // function to calculate the number of days in the current month
     var currentMonth = DateTime.getMonth() + 1; // get the current month (0-11, so we add 1 to get 1-12)
     var months_with_30_days = [4, 6, 9, 11]; // April, June, September, November
